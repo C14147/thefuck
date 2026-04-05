@@ -27,7 +27,7 @@ if version < (3, 8):
           ' ({}.{} detected).'.format(*version))
     sys.exit(-1)
 
-VERSION = '3.32'
+VERSION = '3.34'
 
 install_requires = ['psutil', 'colorama']
 extras_require = {":sys_platform=='win32'": ['win_unicode_console']}
