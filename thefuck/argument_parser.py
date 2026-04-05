@@ -4,7 +4,7 @@ from .const import ARGUMENT_PLACEHOLDER
 from .utils import get_alias
 
 
-class Parser(object):
+class Parser:
     """Argument parser that can handle arguments with our special
     placeholder.
 

@@ -18,7 +18,7 @@ def color(color_):
 
 
 def warn(title):
-    sys.stderr.write(u'{warn}[WARN] {title}{reset}\n'.format(
+    sys.stderr.write('{warn}[WARN] {title}{reset}\n'.format(
         warn=color(colorama.Back.RED + colorama.Fore.WHITE
                    + colorama.Style.BRIGHT),
         reset=color(colorama.Style.RESET_ALL),
@@ -27,8 +27,8 @@ def warn(title):
 
 def exception(title, exc_info):
     sys.stderr.write(
-        u'{warn}[WARN] {title}:{reset}\n{trace}'
-        u'{warn}----------------------------{reset}\n\n'.format(
+        '{warn}[WARN] {title}:{reset}\n{trace}'
+        '{warn}----------------------------{reset}\n\n'.format(
             warn=color(colorama.Back.RED + colorama.Fore.WHITE
                        + colorama.Style.BRIGHT),
             reset=color(colorama.Style.RESET_ALL),
@@ -91,34 +91,34 @@ def debug_time(msg):
 
 
 def how_to_configure_alias(configuration_details):
-    print(u"Seems like {bold}fuck{reset} alias isn't configured!".format(
+    print("Seems like {bold}fuck{reset} alias isn't configured!".format(
         bold=color(colorama.Style.BRIGHT),
         reset=color(colorama.Style.RESET_ALL)))
 
     if configuration_details:
         print(
-            u"Please put {bold}{content}{reset} in your "
-            u"{bold}{path}{reset} and apply "
-            u"changes with {bold}{reload}{reset} or restart your shell.".format(
+            "Please put {bold}{content}{reset} in your "
+            "{bold}{path}{reset} and apply "
+            "changes with {bold}{reload}{reset} or restart your shell.".format(
                 bold=color(colorama.Style.BRIGHT),
                 reset=color(colorama.Style.RESET_ALL),
                 **configuration_details._asdict()))
 
         if configuration_details.can_configure_automatically:
             print(
-                u"Or run {bold}fuck{reset} a second time to configure"
-                u" it automatically.".format(
+                "Or run {bold}fuck{reset} a second time to configure"
+                " it automatically.".format(
                     bold=color(colorama.Style.BRIGHT),
                     reset=color(colorama.Style.RESET_ALL)))
 
-    print(u'More details - https://github.com/nvbn/thefuck#manual-installation')
+    print('More details - https://github.com/nvbn/thefuck#manual-installation')
 
 
 def already_configured(configuration_details):
     print(
-        u"Seems like {bold}fuck{reset} alias already configured!\n"
-        u"For applying changes run {bold}{reload}{reset}"
-        u" or restart your shell.".format(
+        "Seems like {bold}fuck{reset} alias already configured!\n"
+        "For applying changes run {bold}{reload}{reset}"
+        " or restart your shell.".format(
             bold=color(colorama.Style.BRIGHT),
             reset=color(colorama.Style.RESET_ALL),
             reload=configuration_details.reload))
@@ -126,9 +126,9 @@ def already_configured(configuration_details):
 
 def configured_successfully(configuration_details):
     print(
-        u"{bold}fuck{reset} alias configured successfully!\n"
-        u"For applying changes run {bold}{reload}{reset}"
-        u" or restart your shell.".format(
+        "{bold}fuck{reset} alias configured successfully!\n"
+        "For applying changes run {bold}{reload}{reset}"
+        " or restart your shell.".format(
             bold=color(colorama.Style.BRIGHT),
             reset=color(colorama.Style.RESET_ALL),
             reload=configuration_details.reload))

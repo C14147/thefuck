@@ -38,7 +38,7 @@ class Command(object):
             try:
                 self._script_parts = shell.split_command(self.script)
             except Exception:
-                logs.debug(u"Can't split command script {} because:\n {}".format(
+                logs.debug("Can't split command script {} because:\n {}".format(
                     self, sys.exc_info()))
                 self._script_parts = []
 
@@ -142,7 +142,7 @@ class Rule(object):
             try:
                 rule_module = load_source(name, str(path))
             except Exception:
-                logs.exception(u"Rule {} failed to load".format(name), sys.exc_info())
+                logs.exception("Rule {} failed to load".format(name), sys.exc_info())
                 return
         priority = getattr(rule_module, 'priority', DEFAULT_PRIORITY)
         return cls(name, rule_module.match,

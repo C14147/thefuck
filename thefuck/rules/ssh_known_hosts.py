@@ -30,8 +30,8 @@ def side_effect(old_cmd, command):
         re.MULTILINE)
     offending = offending_pattern.findall(old_cmd.output)
     for filepath, lineno in offending:
-        with open(filepath, 'r') as fh:
+        with open(filepath, 'r', encoding='utf-8') as fh:
             lines = fh.readlines()
             del lines[int(lineno) - 1]
-        with open(filepath, 'w') as fh:
+        with open(filepath, 'w', encoding='utf-8') as fh:
             fh.writelines(lines)
